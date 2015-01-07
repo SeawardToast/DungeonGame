@@ -1,0 +1,144 @@
+	public int maxXP = 200000;
+	public int maxLevel = 20;
+
+	// Use this for initialization
+	void Start () {
+	 
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
+		CheckForLevelUp();
+
+	}
+
+	public void CheckForLevelUp() {
+		if (currentXP >= 2000 && currentLevel == 1) {
+			levelUp ();
+		}
+
+		else
+
+		if (currentXP >= 3000 && currentLevel == 2) {
+			levelUp ();
+		}
+
+		else
+
+		if (currentXP >= 5000 && currentLevel == 3) {
+			levelUp ();
+		}
+
+		else
+
+		if (currentXP >= 8000 && currentLevel == 4) {
+			levelUp ();
+		}
+
+		else
+		
+		if (currentXP >= 12000 && currentLevel == 5) {
+			levelUp ();
+		}
+
+		else
+
+		if (currentXP >= 17000 && currentLevel == 6) {
+			levelUp ();
+		}
+
+		else
+
+		if (currentXP >= 23000 && currentLevel == 7) {
+			levelUp ();
+		}
+
+		else
+
+		if (currentXP >= 30000 && currentLevel == 8) {
+			levelUp ();
+		}
+
+		else
+
+		if (currentXP >= 38000 && currentLevel == 9) {
+			levelUp ();
+		}
+
+		else
+
+		if (currentXP >= 47000 && currentLevel == 10) {
+			levelUp ();
+		}
+
+		else
+
+		if (currentXP >= 57000 && currentLevel == 11) {
+			levelUp ();
+		}
+
+		else
+
+		if (currentXP >= 68000 && currentLevel == 12) {
+			levelUp ();
+		}
+
+		else
+
+		if (currentXP >= 80000 && currentLevel == 13) {
+			levelUp ();
+		}
+
+		else
+
+		if (currentXP >= 93000 && currentLevel == 14) {
+			levelUp ();
+		}
+
+		else
+
+		if (currentXP >= 107000 && currentLevel == 15) {
+			levelUp ();
+		}
+
+		else
+
+		if (currentXP >= 122000 && currentLevel == 16) {
+			levelUp ();
+		}
+
+		else
+
+		if (currentXP >= 138000 && currentLevel == 17) {
+			levelUp ();
+		}
+
+		else
+
+		if (currentXP >= 155000 && currentLevel == 18) {
+			levelUp ();
+		}
+
+		else
+
+		if (currentXP >= 200000 && currentLevel == 19) {
+			levelUp ();
+		}
+
+
+
+
+		if (currentXP > maxXP) {
+			currentXP = 200000;
+			currentLevel = 20;
+		}
+	
+	}
+
+	public void levelUp() {
+		Debug.Log ("You leveled up!");
+		currentLevel = currentLevel + 1;
+	}
+
+}
