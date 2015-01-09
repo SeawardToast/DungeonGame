@@ -1,5 +1,7 @@
 	public int maxXP = 200000;
 	public int maxLevel = 20;
+	public int attackDamage = 10;
+	public int defenseStat = 10;
 
 	// Use this for initialization
 	void Start () {
@@ -126,14 +128,152 @@
 			levelUp ();
 		}
 
-
-
-
 		if (currentXP > maxXP) {
 			currentXP = 200000;
 			currentLevel = 20;
 		}
-	
+
+
+		// Statistics
+
+
+		if (currentLevel == 1) {
+			attackDamage = 10;
+			defenseStat = 10;
+		}
+
+		else
+		
+		if (currentLevel == 2) {
+			attackDamage = 14;
+			defenseStat = 12;
+		}
+
+		else
+
+		if (currentLevel == 3) {
+			attackDamage = 19;
+			defenseStat = 14;
+		}
+
+		else
+
+		if (currentLevel == 4) {
+			attackDamage = 26;
+			defenseStat = 17;
+		}
+
+		else
+
+		if (currentLevel == 5) {
+			attackDamage = 35;
+			defenseStat = 21;
+		}
+
+		else
+
+		if (currentLevel == 6) {
+			attackDamage = 47;
+			defenseStat = 25;
+		}
+
+		else
+
+		if (currentLevel == 7) {
+			attackDamage = 63;
+			defenseStat = 30;
+		}
+
+		else
+
+		if (currentLevel == 8) {
+			attackDamage = 85;
+			defenseStat = 36;
+		}
+
+		else
+
+		if (currentLevel == 9) {
+			attackDamage = 115;
+			defenseStat = 43;
+		}
+
+		else
+
+		if (currentLevel == 10) {
+			attackDamage = 155;
+			defenseStat = 52;
+		}
+
+		else
+
+		if (currentLevel == 11) {
+			attackDamage = 204;
+			defenseStat = 62;
+		}
+
+		else
+
+		if (currentLevel == 12) {
+			attackDamage = 291;
+			defenseStat = 74;
+		}
+
+		else
+
+		if (currentLevel == 13) {
+			attackDamage = 362;
+			defenseStat = 89;
+		}
+
+		else
+
+		if (currentLevel == 14) {
+			attackDamage = 438;
+			defenseStat = 107;
+		}
+
+		else
+
+		if (currentLevel == 15) {
+			attackDamage = 515;
+			defenseStat = 128;
+		}
+
+		else
+
+		if (currentLevel == 16) {
+			attackDamage = 587;
+			defenseStat = 154;
+		}
+
+		else
+
+		if (currentLevel == 17) {
+			attackDamage = 649;
+			defenseStat = 185;
+		}
+
+		else
+
+		if (currentLevel == 18) {
+			attackDamage = 694;
+			defenseStat = 222;
+		}
+
+		else
+
+		if (currentLevel == 19) {
+			attackDamage = 719;
+			defenseStat = 10;
+		}
+
+		else
+
+		if (currentLevel == 20) {
+			attackDamage = 725;
+			defenseStat = 319;
+		}
 	}
 
 	public void levelUp() {
