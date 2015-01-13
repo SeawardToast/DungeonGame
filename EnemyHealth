@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour {
 			// <- enemy can emit some sound here with audio.Play();
 			if (health <= 0){ // if health has gone...
 				Debug.Log ("You killed it");
+				destroy(gameObject);
 			}
 		}
 	}
