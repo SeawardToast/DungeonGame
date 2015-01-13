@@ -1,0 +1,18 @@
+using UnityEngine;
+using System.Collections;
+
+public class EnemyHealth : MonoBehaviour {
+
+	public int health = 100;
+
+	void ApplyDamage(int damage){
+		Debug.Log ("Damage being applied... Stand by");
+		if (health > 0){ // if enemy still alive (don't kick a dead dog!)
+			health -= damage; // apply the damage...
+			// <- enemy can emit some sound here with audio.Play();
+			if (health <= 0){ // if health has gone...
+				Debug.Log ("You killed it");
+			}
+		}
+	}
+}
