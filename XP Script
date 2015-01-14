@@ -1,7 +1,14 @@
+using UnityEngine;
+using System.Collections;
+
+public class XPSystem : MonoBehaviour {
+
+	public int currentLevel = 1;
+	public int currentXP = 0;
 	public int maxXP = 200000;
 	public int maxLevel = 20;
 	public int attackDamage = 10;
-	public int defenseStat = 10;
+	public float defenseStat = 10;
 
 	// Use this for initialization
 	void Start () {
@@ -11,274 +18,212 @@
 	// Update is called once per frame
 	void Update () {
 
-		CheckForLevelUp();
+				CheckForLevelUp ();
+				SetStats ();
+		        CheckForShield ();
+		}
 
+
+
+	public void levelUp() {
+			Debug.Log ("You leveled up!");
+			currentLevel = currentLevel + 1;
+		}
+
+	public void CheckForShield() {
+		if (Input.GetMouseButton(1)) {
+			defenseStat = defenseStat + defenseStat * .35f;
+		}
 	}
 
 	public void CheckForLevelUp() {
-		if (currentXP >= 2000 && currentLevel == 1) {
-			levelUp ();
-		}
-
-		else
+				if (currentXP >= 2000 && currentLevel == 1) {
+						levelUp();
+				} else
 
 		if (currentXP >= 3000 && currentLevel == 2) {
-			levelUp ();
-		}
-
-		else
+						levelUp ();
+				} else
 
 		if (currentXP >= 5000 && currentLevel == 3) {
-			levelUp ();
-		}
-
-		else
+						levelUp ();
+				} else
 
 		if (currentXP >= 8000 && currentLevel == 4) {
-			levelUp ();
-		}
-
-		else
+						levelUp ();
+				} else
 		
 		if (currentXP >= 12000 && currentLevel == 5) {
-			levelUp ();
-		}
-
-		else
+						levelUp ();
+				} else
 
 		if (currentXP >= 17000 && currentLevel == 6) {
-			levelUp ();
-		}
-
-		else
+						levelUp ();
+				} else
 
 		if (currentXP >= 23000 && currentLevel == 7) {
-			levelUp ();
-		}
-
-		else
+						levelUp ();
+				} else
 
 		if (currentXP >= 30000 && currentLevel == 8) {
-			levelUp ();
-		}
-
-		else
+						levelUp ();
+				} else
 
 		if (currentXP >= 38000 && currentLevel == 9) {
-			levelUp ();
-		}
-
-		else
+						levelUp ();
+				} else
 
 		if (currentXP >= 47000 && currentLevel == 10) {
-			levelUp ();
-		}
-
-		else
+						levelUp ();
+				} else
 
 		if (currentXP >= 57000 && currentLevel == 11) {
-			levelUp ();
-		}
-
-		else
+						levelUp ();
+				} else
 
 		if (currentXP >= 68000 && currentLevel == 12) {
-			levelUp ();
-		}
-
-		else
+						levelUp ();
+				} else
 
 		if (currentXP >= 80000 && currentLevel == 13) {
-			levelUp ();
-		}
-
-		else
+						levelUp ();
+				} else
 
 		if (currentXP >= 93000 && currentLevel == 14) {
-			levelUp ();
-		}
-
-		else
+						levelUp ();
+				} else
 
 		if (currentXP >= 107000 && currentLevel == 15) {
-			levelUp ();
-		}
-
-		else
+						levelUp ();
+				} else
 
 		if (currentXP >= 122000 && currentLevel == 16) {
-			levelUp ();
-		}
-
-		else
+						levelUp ();
+				} else
 
 		if (currentXP >= 138000 && currentLevel == 17) {
-			levelUp ();
-		}
-
-		else
+						levelUp ();
+				} else
 
 		if (currentXP >= 155000 && currentLevel == 18) {
-			levelUp ();
-		}
-
-		else
+						levelUp ();
+				} else
 
 		if (currentXP >= 200000 && currentLevel == 19) {
-			levelUp ();
-		}
+						levelUp ();
+				}
 
-		if (currentXP > maxXP) {
-			currentXP = 200000;
-			currentLevel = 20;
+				if (currentXP > maxXP) {
+						currentXP = 200000;
+						currentLevel = 20;
+				}
 		}
 
 
 		// Statistics
 
+	public void SetStats() {
 
-		if (currentLevel == 1) {
-			attackDamage = 10;
-			defenseStat = 10;
-		}
-
-		else
+				if (currentLevel == 1) {
+						attackDamage = 10;
+						defenseStat = 10;
+				} else
 		
 		if (currentLevel == 2) {
-			attackDamage = 14;
-			defenseStat = 12;
-		}
-
-		else
+						attackDamage = 14;
+						defenseStat = 12;
+				} else
 
 		if (currentLevel == 3) {
-			attackDamage = 19;
-			defenseStat = 14;
-		}
-
-		else
+						attackDamage = 19;
+						defenseStat = 14;
+				} else
 
 		if (currentLevel == 4) {
-			attackDamage = 26;
-			defenseStat = 17;
-		}
-
-		else
+						attackDamage = 26;
+						defenseStat = 17;
+				} else
 
 		if (currentLevel == 5) {
-			attackDamage = 35;
-			defenseStat = 21;
-		}
-
-		else
+						attackDamage = 35;
+						defenseStat = 21;
+				} else
 
 		if (currentLevel == 6) {
-			attackDamage = 47;
-			defenseStat = 25;
-		}
-
-		else
+						attackDamage = 47;
+						defenseStat = 25;
+				} else
 
 		if (currentLevel == 7) {
-			attackDamage = 63;
-			defenseStat = 30;
-		}
-
-		else
+						attackDamage = 63;
+						defenseStat = 30;
+				} else
 
 		if (currentLevel == 8) {
-			attackDamage = 85;
-			defenseStat = 36;
-		}
-
-		else
+						attackDamage = 85;
+						defenseStat = 36;
+				} else
 
 		if (currentLevel == 9) {
-			attackDamage = 115;
-			defenseStat = 43;
-		}
-
-		else
+						attackDamage = 115;
+						defenseStat = 43;
+				} else
 
 		if (currentLevel == 10) {
-			attackDamage = 155;
-			defenseStat = 52;
-		}
-
-		else
+						attackDamage = 155;
+						defenseStat = 52;
+				} else
 
 		if (currentLevel == 11) {
-			attackDamage = 204;
-			defenseStat = 62;
-		}
-
-		else
+						attackDamage = 204;
+						defenseStat = 62;
+				} else
 
 		if (currentLevel == 12) {
-			attackDamage = 291;
-			defenseStat = 74;
-		}
-
-		else
+						attackDamage = 291;
+						defenseStat = 74;
+				} else
 
 		if (currentLevel == 13) {
-			attackDamage = 362;
-			defenseStat = 89;
-		}
-
-		else
+						attackDamage = 362;
+						defenseStat = 89;
+				} else
 
 		if (currentLevel == 14) {
-			attackDamage = 438;
-			defenseStat = 107;
-		}
-
-		else
+						attackDamage = 438;
+						defenseStat = 107;
+				} else
 
 		if (currentLevel == 15) {
-			attackDamage = 515;
-			defenseStat = 128;
-		}
-
-		else
+						attackDamage = 515;
+						defenseStat = 128;
+				} else
 
 		if (currentLevel == 16) {
-			attackDamage = 587;
-			defenseStat = 154;
-		}
-
-		else
+						attackDamage = 587;
+						defenseStat = 154;
+				} else
 
 		if (currentLevel == 17) {
-			attackDamage = 649;
-			defenseStat = 185;
-		}
-
-		else
+						attackDamage = 649;
+						defenseStat = 185;
+				} else
 
 		if (currentLevel == 18) {
-			attackDamage = 694;
-			defenseStat = 222;
-		}
-
-		else
+						attackDamage = 694;
+						defenseStat = 222;
+				} else
 
 		if (currentLevel == 19) {
-			attackDamage = 719;
-			defenseStat = 10;
-		}
-
-		else
+						attackDamage = 719;
+						defenseStat = 10;
+				} else
 
 		if (currentLevel == 20) {
-			attackDamage = 725;
-			defenseStat = 319;
+						attackDamage = 725;
+						defenseStat = 319;
+				}
 		}
-	}
-
-	public void levelUp() {
-		Debug.Log ("You leveled up!");
-		currentLevel = currentLevel + 1;
-	}
-
 }
+
+			
