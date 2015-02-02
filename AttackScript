@@ -1,15 +1,15 @@
 	using UnityEngine;
 	using System.Collections;
 	
+    [System.Serializable]
 	public class MeleeSystem : MonoBehaviour {
 		
-		int Damage = 50;
-		float Distance;
-		float MaxDistance = 2;
-		Transform TheSystem;
+		public static float Distance;
+		public static float MaxDistance = 2;
+		public static Transform TheSystem;
 		
 		void  Update (){
-			if (Input.GetKeyDown("l")) 
+			if (Input.GetMouseButtonDown(0)) 
 			{
 	
 				RaycastHit hit;
@@ -21,7 +21,7 @@
 			{
 					Distance = hit.distance;
 					if (Distance < MaxDistance) {
-						hit.transform.SendMessage("ApplyDamage", Damage, SendMessageOptions.DontRequireReceiver); 
+						hit.transform.SendMessage("ApplyDamage", XPSystem.attackDamage); 
 				Debug.Log ("Sending attack!");
 
 				}
