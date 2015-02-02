@@ -1,13 +1,14 @@
 using UnityEngine;
 using System.Collections;
 
+[System.Serializable]
 public class XPSystem : MonoBehaviour {
 
 	public int currentLevel = 1;
 	public int currentXP = 0;
 	public int maxXP = 200000;
 	public int maxLevel = 20;
-	public int attackDamage = 10;
+	public static int attackDamage = 10;
 	public float defenseStat = 10;
 
 	// Use this for initialization
@@ -21,8 +22,10 @@ public class XPSystem : MonoBehaviour {
 				CheckForLevelUp ();
 				SetStats ();
 		        CheckForShield ();
-		}
+	//	currentXP = currentXP + 20;
 
+			//	debugXP ();
+		}
 
 
 	public void levelUp() {
@@ -35,6 +38,10 @@ public class XPSystem : MonoBehaviour {
 			defenseStat = defenseStat + defenseStat * .35f;
 		}
 	}
+
+
+
+
 
 	public void CheckForLevelUp() {
 				if (currentXP >= 2000 && currentLevel == 1) {
@@ -225,5 +232,4 @@ public class XPSystem : MonoBehaviour {
 				}
 		}
 }
-
 			
