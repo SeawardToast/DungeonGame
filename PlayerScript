@@ -1,4 +1,13 @@
- private int currentHealth;
+ using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+
+[System.Serializable]
+public class PlayerScript : MonoBehaviour
+{
+    #region FIELDS
+	
+    public static int currentHealth;
 
     public int maxHealth;
 	
@@ -19,6 +28,8 @@
     public float cooldown;
 
     private bool onCD;
+
+	public Texture aTexture;
 
     #endregion
 
@@ -54,20 +65,27 @@
     {   
 				
 			if (currentHealth <= 0) {
-			Death();
+						Death ();
+				}
+			else {
+				Living();
+			}
 
 			}
-				}
+				
 
 
 	void Death() {
 		Debug.Log ("You are dead");
+	//	GUI.DrawTexture(new Rect(10, 10, 60, 60), aTexture, ScaleMode.ScaleToFit, true, 10.0F);
+
+	}
+
+	void Living() {
+		Debug.Log ("Living");
 	}
 	
 
-    /// <summary>
-    /// Handles the healthbar by moving it and changing color
-    /// </summary>
     private void HandleHealthbar()
     {   
         //Writes the current health in the text field
@@ -109,10 +127,7 @@
         }
     }
 
-    /// <summary>
-    /// Keeps track of the  damage CD
-    /// </summary>
-    /// <returns></returns>
+
     IEnumerator CoolDownDmg()
     {
         onCD = true; 
@@ -120,15 +135,7 @@
         onCD = false;
     }
 
-    /// <summary>
-    /// This method maps a range of number into another range
-    /// </summary>
-    /// <param name="x">The value to evaluate</param>
-    /// <param name="in_min">The minimum value of the evaluated variable</param>
-    /// <param name="in_max">The maximum value of the evaluated variable</param>
-    /// <param name="out_min">The minum number we want to map to</param>
-    /// <param name="out_max">The maximum number we want to map to</param>
-    /// <returns></returns>
+
     public float Map(float x, float in_min, float in_max, float out_min, float out_max)
     {
         return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
