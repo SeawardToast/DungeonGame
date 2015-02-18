@@ -1,0 +1,36 @@
+using UnityEngine;
+using System.Collections;
+
+public class EnemyStats : MonoBehaviour {
+
+	public static bool GUIon = false;
+
+	public void OnMouseOver(){ GUIon = true; }
+	
+	public void OnMouseExit(){ GUIon = false; }
+
+
+	void OnGUI() {
+		
+		if (EnemyStats.GUIon == true) {
+						//GUI.Box (Rect (0, 0, Screen.width, Screen.height), "Cursor Over Object");
+						
+
+				}else{
+
+			
+		}
+	}
+
+
+
+	// Use this for initialization
+	void Start () {
+
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}
+}
