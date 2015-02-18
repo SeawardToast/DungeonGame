@@ -1,3 +1,6 @@
+using UnityEngine;
+using System.Collections;
+
 [System.Serializable]
 public class EnemyHealth : MonoBehaviour {
 
@@ -6,6 +9,7 @@ public class EnemyHealth : MonoBehaviour {
 	public float healthBarLength;
 //	public GameObject deathPrefab;
 //	public GameObject deathSpawn;
+	
 
 	void Start() {
 		healthBarLength = Screen.width / 2;
@@ -22,13 +26,16 @@ public class EnemyHealth : MonoBehaviour {
 		}
 
 	void OnGUI() {
-		GUI.Box(new Rect(350, 40, healthBarLength,20), currentHealth + "/" + maxHealth);
-	}
+
+			GUI.Box (new Rect (350, 40, healthBarLength, 20), currentHealth + "/" + maxHealth);
+
+				
+		}
 
 	void ApplyDamage(int damage){
 		Debug.Log ("Damage being applied... Stand by");
 		if (currentHealth > 0){ // if enemy still alive (don't kick a dead dog!)
-			currentHealth -= damage; // apply the damage...
+			currentHealth -= XPSystem.attackDamage; // apply the damage...
 			// <- enemy can emit some sound here with audio.Play();
 			if (currentHealth <= 0){ // if health has gone...
 				Death();
